@@ -1,17 +1,17 @@
-package alist
+package auth
 
 import (
 	"fmt"
+	"github.com/twoonefour/alist-auth/common"
+	"github.com/twoonefour/alist-auth/utils"
 
-	"api.nn.ci/apps/common"
-	"api.nn.ci/utils"
 	"github.com/gin-gonic/gin"
 )
 
 var (
 	baiduClientId     string
 	baiduClientSecret string
-	baiduCallbackUri  = "https://alist.nn.ci/tool/baidu/callback"
+	baiduCallbackUri  = FrontEndBaseUrl + "/tool/baidu/callback"
 )
 
 func baiduToken(c *gin.Context) {

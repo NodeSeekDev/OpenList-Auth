@@ -1,11 +1,11 @@
-package alist
+package auth
 
 import (
 	"fmt"
+	"github.com/twoonefour/alist-auth/common"
+	"github.com/twoonefour/alist-auth/utils"
 	"strings"
 
-	"api.nn.ci/apps/common"
-	"api.nn.ci/utils"
 	"github.com/gin-gonic/gin"
 )
 

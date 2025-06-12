@@ -1,13 +1,17 @@
-package alist
+package auth
 
 import (
 	"encoding/base64"
+	"github.com/twoonefour/alist-auth/common"
 	"net/url"
 	"strings"
 
-	"api.nn.ci/apps/common"
-	"api.nn.ci/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/twoonefour/alist-auth/utils"
+)
+
+var (
+	oneDriveCallBackUri = FrontEndBaseUrl + "/tool/onedrive/callback"
 )
 
 type Zone struct {
@@ -61,7 +65,7 @@ func onedriveToken(c *gin.Context) {
 				"client_secret": clients[1],
 				"code":          req.Code,
 				"grant_type":    "authorization_code",
-				"redirect_uri":  "https://alist.nn.ci/tool/onedrive/callback",
+				"redirect_uri":  oneDriveCallBackUri,
 			}).
 			Post(zone.Oauth + "/common/oauth2/v2.0/token")
 		if err != nil {

@@ -1,9 +1,9 @@
-package alist
+package auth
 
 import (
-	"api.nn.ci/apps/common"
-	"api.nn.ci/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/twoonefour/alist-auth/common"
+	"github.com/twoonefour/alist-auth/utils"
 )
 
 func Qr(c *gin.Context) {
@@ -64,9 +64,9 @@ func Ck(c *gin.Context) {
 			"referer": "https://passport.aliyundrive.com/mini_login.htm?&appName=aliyun_drive",
 		}).
 		Post("https://passport.aliyundrive.com/newlogin/qrcode/query.do?appName=aliyun_drive&fromSite=52&_bx-v=2.0.31")
-	//data := utils.Json.Get(res.Body(), "content", "data")
-	//loginResult := data.Get("loginResult").ToString()
-	//bizExt := data.Get("bizExt").ToString()
+	// data := utils.Json.Get(res.Body(), "content", "data")
+	// loginResult := data.Get("loginResult").ToString()
+	// bizExt := data.Get("bizExt").ToString()
 	c.Header("Content-Type", "application/json")
 	c.Writer.Write(res.Body())
 }
