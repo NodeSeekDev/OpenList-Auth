@@ -1,3 +1,4 @@
+此项目archive, 请转向 [OpenListTeam/OpenList-APIPages](https://github.com/OpenListTeam/OpenList-APIPages)
 # 一个聚合driver oauth2的go后端
 
 目前已实现
